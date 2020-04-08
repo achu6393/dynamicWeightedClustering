@@ -1,4 +1,4 @@
-# dynamicWeightedClustering
+# Genetic Weighted Clustering Algorithm for Optimised Recharge Scheduling
 
 **Created on:** 08/04/2020<br />
 **Author:** Akshayaa Y.S. Pandiyan<br />
