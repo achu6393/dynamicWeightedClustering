@@ -26,7 +26,7 @@ double nAcous= 0.00858;
 
 
 //Circuit Efficiencies
-float cEffInd = 0.50;			//RF to DC Efficiency[%]
+float cEffInd = 0.50;			//IPT Efficiency[%] - worst case
 float cEffPD = 0.90;			//Piezo Driver Efficiency[%]
 float cEffAC = 0.98;			//Discharge
 float cEffPDAC = 0.98;			//Acoustic to DC Efficiency[%]
