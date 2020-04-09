@@ -8,3 +8,5 @@
 Stage Wireless Power Transfer" for the IEEE Transaction of Industrial Informatics, special issue on Green Industrial Internet of Things for review.<br />
 **Last modified:** 08/04/2020
 
+**DJI SDK Repository**: https://github.com/dji-sdk/Onboard-SDK
+
