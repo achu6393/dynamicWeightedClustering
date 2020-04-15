@@ -2,7 +2,6 @@
  * MainMin.cpp
  *
  *  Created on: 17 May 2019
- *      Author: apandiya
  */
 
 

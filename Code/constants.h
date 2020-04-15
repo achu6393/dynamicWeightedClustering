@@ -2,7 +2,6 @@
  * Constant.h
  *
  *  Created on: 28 May 2019
- *      Author: apandiya
  */
 
 #ifndef CONSTANT_H_

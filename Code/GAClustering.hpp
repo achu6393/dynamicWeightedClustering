@@ -2,7 +2,6 @@
  * SensorNode.hpp
  *
  *  Created on: 21 May 2019
- *      Author: apandiya
  */
 
 #ifndef SENSORNODE_HPP_
@@ -306,7 +305,8 @@ void PDV::updatePosition(const point &sPos){
 void SensorNode::readEnergy(double t){
 	int senseCycle = floor(t/(3*this->TCycle));
 
-	SC_E -= ((senseCycle*SCycle*V_Sense*I_Sense)+(senseCycle*ICycle*I_Idle*V_Sense) + (senseCycle*CCycle*0.00245)); // J Energy for Communication
+	SC_E -= ((senseCycle*SCycle*V_Sense*I_Sense)+(senseCycle*ICycle*I_Idle*V_Sense) + (senseCycle*CCycle*0.00245)); // J Energy for
+																													// Communication and Micrprocessor
 	this->updateV();
 	int d=0;d++;
 }
@@ -507,7 +507,7 @@ void PDV::GeneticClustering(std::vector<SensorNode> &S, std::vector<SensorNode*>
 
 
 		for (int i=0; i< pop; i++){
-//			penalityFunction(targetC[i],S);
+//			penalityFunction(targetC[i],S); //Comment when includling angular penality function
 			targetM[i] = geneticFitnessFunction(S, targetC[i], &S[0]);
 			this->ePDV = C_max; this->tTime = 0.0;
 //			kOptimisation(trailC[i]);   //Comment when not optimising for clusters

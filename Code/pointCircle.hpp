@@ -4,7 +4,6 @@
  * Smallest encircling cluster for single and multi cluster sensor network.
  *
  * 		Created on: 17 May 2019
- *      Author: apandiya
  */
 
 
@@ -25,7 +24,7 @@ unsigned seed = static_cast<int> (std::chrono::system_clock::now().time_since_ep
 // Uniform-Real random number generator
 #include "constants.h"
 static std::default_random_engine generator(seed);
-std::uniform_real_distribution<double> distribution(3.3,5.0); //min and max value of V in a network
+std::uniform_real_distribution<double> distribution(3.0,5.0); //min and max value of V in a network
 
 
 // Uniform-integer random number generator
