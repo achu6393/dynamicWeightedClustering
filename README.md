@@ -3,7 +3,7 @@
 **Created on:** 08/04/2020<br />
 **Description:** This is a open source C++ code submitted as a supplementary material for the paper titled "Optimal Dynamic Recharge Scheduling for Two
 Stage Wireless Power Transfer" for the IEEE Transaction of Industrial Informatics, special issue on Green Industrial Internet of Things for review.<br />
-**Last modified:** 09/04/2020
+**Last modified:** 15/04/2020 - Removed authorship detailed for peer review.<br />
 
 **DJI SDK Repository**: https://github.com/dji-sdk/Onboard-SDK
 
