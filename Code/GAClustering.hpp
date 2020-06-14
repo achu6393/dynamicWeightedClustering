@@ -360,7 +360,7 @@ void PDV::geneticInitialisation(std::vector<cluster> &initC, int k, std::vector<
 	for(int j = 0; j < static_cast<int>(S.size()); j++){
 		int thisInd = 0;
 		for(int l=1; l<k; l++){
-			if(S[j].position.calcDistance(*initC[l-1].O) >  S[j].position.calcDistance(*initC[l].O))
+			if(S[j].position.calcDistance(*initC[thisInd].O) >  S[j].position.calcDistance(*initC[l].O))
 				thisInd = l;
 		}
 		//If the nearest center is within Acoustic limits
