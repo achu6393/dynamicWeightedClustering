@@ -229,7 +229,7 @@ void PDV::OnlyInductive(std::vector<SensorNode> &S, std::vector<SensorNode*> P){
 	}
 
 	float perC = ((needS - unchargedS)*100)/needS;
-	ofile<<perC<< ",";
+//	ofile<<perC<< ",";
 
 //	std::cout<<perC<< '\t';
 	this->tTime = ((C_max - this->ePDV)/pFlight)*3600;
@@ -308,7 +308,6 @@ void SensorNode::readEnergy(double t){
 	SC_E -= ((senseCycle*SCycle*V_Sense*I_Sense)+(senseCycle*ICycle*I_Idle*V_Sense) + (senseCycle*CCycle*0.00245)); // J Energy for
 																													// Communication and Micrprocessor
 	this->updateV();
-	int d=0;d++;
 }
 
 void PDV::readEnergy(std::vector<SensorNode> &S){
@@ -329,7 +328,7 @@ void PDV::readEnergy(std::vector<SensorNode> &S){
 		}
 		//Idle cycle
 		else{
-			S[i].SC_E -= S[i].SC_V *  S[i].ICycle;
+			S[i].SC_E -= S[i].V_Sense *  S[i].I_Idle * S[i].ICycle;
 			S[i].updateV();
 		}
 
@@ -598,7 +597,7 @@ void PDV::GeneticClustering(std::vector<SensorNode> &S, std::vector<SensorNode*>
 	}
 
 	float perC = ((needS - unchargedS)*100)/needS;
-	ofile<<perC<< ",";
+//	ofile<<perC<< ",";
 	this->tTime = ((C_max - this->ePDV)/pFlight)*3600;
 												// XX Flight time + tafe off, landing time[s]
 	//Update all Sensor Energy
@@ -623,6 +622,12 @@ double  PDV::geneticFitnessFunction(std::vector<SensorNode> S, std::vector<clust
 		std::vector<double> t = fPosition.calcDistance(thisFlightPath);
 		int fInd = std::distance(t.begin(),std::min_element(t.begin(),t.end()));
 		dPDV +=  fPosition.calcDistance(thisFlightPath[fInd]);
+
+		//Checking if enough energy for PDV visit
+		if(checkEnergy(thisFlightPath[fInd].calcDistance(origin)/fSpeed)
+				+ checkEnergy(fPosition.calcDistance(thisFlightPath[fInd])/fSpeed) > this->ePDV)
+			break;
+
 		updatePosition(thisFlightPath[fInd]);
 
 		//Calculate eWSN
