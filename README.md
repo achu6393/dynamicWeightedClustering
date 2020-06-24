@@ -5,6 +5,6 @@
 Stage Wireless Power Transfer" for the IEEE Transaction of Industrial Informatics, special issue on Green Industrial Internet of Things for review.<br />
 **Last modified:** 14/06/2020 - Changed Line 363 GAClustering.h for logical correction<br />
 15/04/2020 - Removed authorship details for peer review.<br />
-
+24/06/2020 - Fixed GAClustering.hpp bugs after first review and uploaded new version<br />
 **DJI SDK Repository**: https://github.com/dji-sdk/Onboard-SDK
 
